@@ -8,6 +8,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('dashboard');
+        $customer = auth()->user()->customers;
+        $wallet = $customer->wallets()->where('type', 'compte')->first();
+
+        return view('dashboard', compact('customer', 'wallet'));
     }
 }

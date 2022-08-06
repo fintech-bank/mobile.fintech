@@ -129,7 +129,7 @@ a:hover, a:active, a:focus {
 }
 
 .appHeader .pageTitle .logo {
-  max-height: 24px;
+  max-height: 50px;
 }
 
 .appHeader.text-light {
