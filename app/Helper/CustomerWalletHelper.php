@@ -57,9 +57,22 @@ class CustomerWalletHelper
         }
     }
 
-    public static function getNameAccount($wallet)
+    public static function getNameAccount($wallet, $simple = false)
     {
-        return CustomerHelper::getName($wallet->customer).' - Compte courant N°'.$wallet->number_account;
+        if ($simple == false) {
+            return match ($wallet->type) {
+                'compte' => CustomerHelper::getName($wallet->customer) . ' - Compte courant N°' . $wallet->number_account,
+                'epargne' => CustomerHelper::getName($wallet->customer) . ' - Compte epargne N°' . $wallet->number_account,
+                'pret' => CustomerHelper::getName($wallet->customer) . ' - Contrat de pret N°' . $wallet->number_account,
+                default => CustomerHelper::getName($wallet->customer),
+            };
+        } else {
+            return match ($wallet->type) {
+                'compte' => 'Compte courant N°' . $wallet->number_account,
+                'epargne' => 'Compte epargne N°' . $wallet->number_account,
+                'pret' => 'Contrat de pret N°' . $wallet->number_account
+            };
+        }
     }
 
     /**
