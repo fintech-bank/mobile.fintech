@@ -214,4 +214,6 @@ return [
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
     ])->toArray(),
 
+    'version_app' => env('APP_VERSION')
+
 ];

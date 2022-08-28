@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/vapid/key', [\App\Http\Controllers\Api\PushController::class, 'getKey']);
+Route::post('/vapid/subscription', [\App\Http\Controllers\Api\PushController::class, 'subscription']);

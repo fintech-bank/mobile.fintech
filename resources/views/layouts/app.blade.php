@@ -362,6 +362,7 @@
 <script src="/assets/js/plugins/splide/splide.min.js"></script>
 <!-- Base Js File -->
 <script src="/assets/js/base.js"></script>
+@vite(['resources/js/app.js'])
 
 <script>
     // Add to Home with 2 seconds delay.
