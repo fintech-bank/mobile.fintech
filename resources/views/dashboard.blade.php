@@ -6,8 +6,20 @@
 
 
 @section("content")
+
     <!-- Wallet Card -->
     <div class="section wallet-card-section pt-1">
+        <div id="push-permission" class="d-none">
+            <div class="alert alert-imaged alert-secondary alert-dismissible fade show mb-2" role="alert">
+                <div class="icon-wrap">
+                    <ion-icon name="notifications-outline" role="img" class="md hydrated" aria-label="cash outline"></ion-icon>
+                </div>
+                <div>
+                    Cette application peut vous envoyer certaine notification
+                </div>
+                <button class="btn btn-outline-primary me-1 mb-1 p-2" style="position: absolute; top: 0; right: 0; padding: 0; margin-top: 3px">Activer les notifications</button>
+            </div>
+        </div>
         <div class="wallet-card">
             <!-- Balance -->
             <div class="balance">

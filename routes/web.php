@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', [\App\Http\Controllers\Account\NotificationController::class, 'index'])->name('account.notifications.index');
             Route::get('{id}', [\App\Http\Controllers\Account\NotificationController::class, 'show'])->name('account.notifications.show');
             Route::put('readall', [\App\Http\Controllers\Account\NotificationController::class, 'readall'])->name('account.notifications.readall');
+            Route::post('subscription', [\App\Http\Controllers\Account\NotificationController::class, 'subscription'])->name('account.notifications.subscription');
         });
 
         Route::prefix('settings')->group(function () {
